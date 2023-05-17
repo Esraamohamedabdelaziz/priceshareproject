@@ -1,0 +1,121 @@
+{
+    "menuPrimary": {
+        "menu_1": [
+            {
+                "text": "Home Appliances",
+                "text_ar": "الأجهزة المنزلية",
+                "url": "/shop?category=2",
+                "extraClass": "menu-item-has-children",
+                "subClass": "sub-menu",
+                "mainTitle": "true",
+                "id": 2
+            },
+            {
+                "text": "Personal Devices",
+                "text_ar": "الأجهزة الشخصية",
+                "url": "/shop?category=1",
+                "extraClass": "menu-item-has-children",
+                "subClass": "sub-menu",
+                "mainTitle": "true",
+                "id": 1
+            },
+            {
+                "text": "Building Equipment",
+                "text_ar": "معدات بناء",
+                "url": "/shop?category=2",
+                "extraClass": "menu-item-has-children",
+                "subClass": "sub-menu",
+                "mainTitle": "true",
+                "id": 1
+            },
+            {
+                "text": "Home Furnishing",
+                "text_ar": "تأثيث المنزل",
+                "url": "/shop?category=2",
+                "extraClass": "menu-item-has-children",
+                "subClass": "sub-menu",
+                "mainTitle": "true",
+                "id": 1
+            }
+        ]
+    },
+    "product_categories": [
+        {
+            "icon": "icon-star",
+            "text": "Hot Promotions",
+            "text_ar": "خصومات ساخنة",
+            "url": "/shop",
+            "id": ""
+        },
+        {
+            "icon": "icon-laundry",
+            "text": "Home Appliances",
+            "text_ar": "الأجهزة المنزلية",
+            "url": "/shop?category=2",
+            "id": 2
+        },
+        {
+            "icon": "icon-desktop",
+            "text": "Personal Devices ",
+            "text_ar": "الأجهزة الشخصية",
+            "url": "/shop?category=1",
+            "id": 1
+        },
+        {
+            "icon": "icon-lampshade",
+            "text": "Building Materials",
+            "text_ar": "مواد بناء",
+            "url": "/shop?category=3",
+            "id": 3
+        },
+        {
+            "icon": "icon-wrench",
+            "text": "Home Equipment",
+            "text_ar": "معدات المنزل",
+            "url": "/shop?category=4",
+            "id": 4
+        },
+        {
+            "icon": "icon-book2",
+            "text": "Home Furnishings",
+            "text_ar": "تأثيث المنزل",
+            "url": "/shop?category=5",
+            "id": 5
+        },
+        {
+            "icon": "icon-shirt",
+            "text": "Clothing & Apparel",
+            "text_ar": "الملابس",
+            "url": "/shop?category=6",
+            "id": 6
+        },
+        {
+            "icon": "icon-plane",
+            "text": "Travel & Tourism ",
+            "text_ar": "رحلة سياحية",
+            "url": "/shop?category=7",
+            "id": 7
+        },
+        {
+            "icon": "icon-cart",
+            "text": "Daily Family Needs",
+            "text_ar": "احتياجات الأسرة اليومية",
+            "url": "/shop?category=8",
+            "id": 8
+        },
+        {
+            "icon": "icon-car-siren",
+            "text": "Cars & Motorcycles",
+            "text_ar": "سيارات ودراجات نارية",
+            "url": "/shop?category=9",
+            "id": 9
+        },
+        {
+            "icon": "icon-tag",
+            "text": "Vouchers & Services",
+            "text_ar": "القسائم والخدمات",
+            "url": "/shop?category=10",
+            "id": 10
+        }
+    ]
+}

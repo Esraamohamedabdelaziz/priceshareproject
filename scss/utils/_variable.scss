@@ -1,0 +1,50 @@
+@font-face {
+    font-family: 'GoBold';
+    src: url('../../public/static/fonts/gobold/bold.otf');
+}
+@font-face {
+    font-family: 'Muse Sans';
+    src: url('../../public/static/fonts/museosans/bold.otf');
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@100&family=Source+Code+Pro:wght@200&display=swap');
+}
+$font-1st: 'GoBold', sans-serif;
+$font-2nd: 'Muse Sans', serif;
+$font-3rd: 'Open Sans', sans-serif;
+$home: true !default;
+
+$color-1st: #e32017;
+$color-layout-2-1st: #dd2400;
+$color-autopart: #dd2400;
+$color-technology: #0071df;
+$color-electronic: #dd2400;
+$color-furniture: #fb7c00;
+$color-organic: #5fa30f;
+$color-kids: #3e81ac;
+$color-photo: #c81919;
+$color-2nd: #222222;
+$color-3rd: #5e6b9d;
+$color-heading: white;
+$color-text: #666;
+$color-text-2: #555;
+$color-dark: #161824;
+$color-link: #06c;
+
+$color-success: #669900;
+$color-warning: #faa806;
+$color-danger: #ec0101;
+$color-gray: #9e9e9e;
+$color-facebook: #3b5999;
+$color-twitter: #55acee;
+$color-google: #dd4b39;
+$color-linkedin: #0077b5;
+$color-instagram: #0077b5;
+$color-light-gray: #f4f4f4;
+$document-font-size: 14px;
+
+$timing: cubic-bezier(0.77, 0, 0.175, 1);
+$timing-1: cubic-bezier(0.7, 0, 0.3, 1);
+$timing-2: cubic-bezier(0.2, 1, 0.3, 1);
+$timing-3: cubic-bezier(0.4, 0, 0.2, 1);

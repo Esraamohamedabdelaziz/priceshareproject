@@ -1,0 +1,41 @@
+{
+    "stores": [
+        {
+            "country": "us",
+            "currency": "USD",
+            "languages": ["en"],
+            "domain_url": "/priceshareusstore"
+        },
+        {
+            "country": "egy",
+            "currency": "EGP",
+            "languages": ["en", "ar"],
+            "domain_url": "/priceshareegyptstore"
+        },
+
+        {
+            "country": "uae",
+            "currency": "AED",
+            "languages": ["en", "ar"],
+            "domain_url": "/priceshareuaestore"
+        },
+        {
+            "country": "om",
+            "currency": "OMR",
+            "languages": ["en", "ar"],
+            "domain_url": "/priceshareomstore"
+        },
+        {
+            "country": "lbn",
+            "currency": "USD",
+            "languages": ["en", "ar"],
+            "domain_url": "/pricesharelbnstore"
+        },
+        {
+            "country": "swe",
+            "currency": "KR",
+            "languages": ["en", "sek"],
+            "domain_url": "/priceshareswestore"
+        }
+    ]
+}
