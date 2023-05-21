@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
-import {Radio} from 'antd';
-import {useRouter} from 'next/router';
+import React, { useState } from 'react';
+import { Radio } from 'antd';
+import { useRouter } from 'next/router';
 import CheckoutService from '../../../services/CheckoutService';
-import {getCartItemsFromCookies} from '~/utilities/ecomerce-helpers';
+import { getCartItemsFromCookies } from '~/utilities/ecomerce-helpers';
 import Router from 'next/router';
-import {loginModelController} from '~/store/auth/action';
-import {useDispatch} from 'react-redux';
+import { loginModelController } from '~/store/auth/action';
+import { useDispatch } from 'react-redux';
 
 const ModulePaymentMethods = () => {
     const Router = useRouter();
@@ -13,7 +13,6 @@ const ModulePaymentMethods = () => {
     const dispatch = useDispatch();
     const [errorCurrent, setErrorCurrent] = useState(null);
     const [errorNeed, setErrorNeed] = useState(null);
-
 
     function handleChangeMethod(e) {
         setMethod(e.target.value); //e.target.value
@@ -30,7 +29,7 @@ const ModulePaymentMethods = () => {
             JSON.parse(localStorage.getItem('reg_checkout_ready')) &&
             JSON.parse(localStorage.getItem('reg_checkout_ready'))[
                 'address_info'
-                ] &&
+            ] &&
             JSON.parse(localStorage.getItem('userData'))
         ) {
             checkoutService
@@ -38,24 +37,23 @@ const ModulePaymentMethods = () => {
                     product_ids_quanities,
                     JSON.parse(localStorage.getItem('reg_checkout_ready'))[
                         'address_info'
-                        ],
+                    ],
                     payment_method
                 )
                 .then((res) => {
                     console.log(res);
                     if (res.status == 406) {
-                        console.log("error not enough points");
+                        console.log('error not enough points');
                         setErrorCurrent(res.data['current_points']);
                         setErrorNeed(res.data['needed_amount']);
                     } else {
                         window.localStorage.setItem(
                             'reg_checkout_done',
-                            JSON.stringify({order_id: res})
+                            JSON.stringify({ order_id: res })
                         );
                         window.localStorage.removeItem('reg_checkout_ready');
                         Router.push('/account/payment-success');
                     }
-
                 });
         } else {
             dispatch(loginModelController(true));
@@ -87,11 +85,11 @@ const ModulePaymentMethods = () => {
                         <div className="ps-block__tab">
                             <div className="form-group">
                                 <label>Card Number</label>
-                                <input type="text" className="form-control"/>
+                                <input type="text" className="form-control" />
                             </div>
                             <div className="form-group">
                                 <label>Card Holders</label>
-                                <input type="text" className="form-control"/>
+                                <input type="text" className="form-control" />
                             </div>
                             <div className="row">
                                 <div className="col-sm-4 col-4">
@@ -123,8 +121,10 @@ const ModulePaymentMethods = () => {
                     ) : method === 2 ? (
                         <div className="ps-block__tab">
                             {errorCurrent ? (
-                                <p style={{color: 'red'}}>
-                                    Your current points are not enough, {errorCurrent} points. Points needed are {errorNeed} points.
+                                <p style={{ color: 'red' }}>
+                                    Your current points are not enough,{' '}
+                                    {errorCurrent} points. Points needed are{' '}
+                                    {errorNeed} points.
                                 </p>
                             ) : (
                                 ''

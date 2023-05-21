@@ -30,7 +30,9 @@ class FormCheckoutInformation extends Component {
     componentDidUpdate(prevProps) {
         // const {shipping_address_firstname} = this.props?.addressData
 
-        const zoneName = this.props?.zones?.find(z => z?.id==this.props?.addressData?.shipping_zone_id )?.name
+        const zoneName = this.props?.zones?.find(
+            (z) => z?.id == this.props?.addressData?.shipping_zone_id
+        )?.name;
         console.log(zoneName, 'shipping_address_firstname');
         if (
             this.props?.addressData?.shipping_address_firstname !==
@@ -39,7 +41,8 @@ class FormCheckoutInformation extends Component {
             this.setState({
                 firstName: this.props?.addressData?.shipping_address_firstname,
             });
-        }  if (
+        }
+        if (
             this.props?.addressData?.shipping_address_lastname !==
             this.state.lastName
         ) {
@@ -49,15 +52,14 @@ class FormCheckoutInformation extends Component {
         }
 
         if (
-            this.props?.addressData?.shipping_phone_number !==
-            this.state.phone
+            this.props?.addressData?.shipping_phone_number !== this.state.phone
         ) {
             this.setState({
                 phone: this.props?.addressData?.shipping_phone_number,
             });
         }
 
-         if (
+        if (
             this.props?.addressData?.shipping_address_line1 !==
             this.state.address_1
         ) {
@@ -66,21 +68,20 @@ class FormCheckoutInformation extends Component {
             });
         }
 
-         if (
+        if (
             this.props?.addressData?.shipping_address_line2 !==
             this.state.address_2
         ) {
             this.setState({
                 address_2: this.props?.addressData?.shipping_address_line2,
             });
-        }  if (
-           zoneName!==
-            this.state.city
-        ) {
+        }
+        if (zoneName !== this.state.city) {
             this.setState({
-                city: zoneName
-            });  this.setState({
-                shipping_zone_id: this.props?.addressData?.shipping_zone_id
+                city: zoneName,
+            });
+            this.setState({
+                shipping_zone_id: this.props?.addressData?.shipping_zone_id,
             });
         }
     }
@@ -118,12 +119,17 @@ class FormCheckoutInformation extends Component {
         this.setState({ postalCode: e.target.value });
     };
 
-    handleLoginSubmit = () => {console.log(this.props?.addressData,this.props?.addressData ==undefined,'this.props?.addressData');
-        if(this.props?.addressData ==undefined){
-toast.error('Please Select a address')
-        }else{
+    handleLoginSubmit = () => {
+        console.log(
+            this.props?.addressData,
+            this.props?.addressData == undefined,
+            'this.props?.addressData'
+        );
+        if (this.props?.addressData == undefined) {
+            toast.error('Please Select a address');
+        } else {
             this.setCheckoutReadyAddressLocalStorage();
-        Router.push('/account/shipping');
+            Router.push('/account/shipping');
         }
     };
 
@@ -149,11 +155,9 @@ toast.error('Please Select a address')
                         onChange={this.handleChangeUsername}
                     />
                 </div>
-              
-        
 
-                  {this.props.children}
-                <h3 className="ps-form__heading" style={{fontSize:'20px'}}>
+                {this.props.children}
+                <h3 className="ps-form__heading" style={{ fontSize: '20px' }}>
                     {checkoutLang?.shipping_address}
                 </h3>
                 <div className="row">
@@ -171,59 +175,58 @@ toast.error('Please Select a address')
                     </div>
                     <div className="col-sm-6">
                         <div className="form-group">
-                           <Input
-                                    className="form-control"
-                                    type="text"
-                                    placeholder={checkoutLang?.last_name}
-                                    value={this.state.lastName}
-                                    disabled={true}
-                                    onChange={this.handleChangeLastName}
-                                />
+                            <Input
+                                className="form-control"
+                                type="text"
+                                placeholder={checkoutLang?.last_name}
+                                value={this.state.lastName}
+                                disabled={true}
+                                onChange={this.handleChangeLastName}
+                            />
                         </div>
                     </div>
                 </div>
                 <div className="form-group">
-                   <Input
-                            className="form-control"
-                            type="text"
-                            placeholder={checkoutLang?.phone}
-                            value={this.state.phone}
-                            disabled={true}
-                            onChange={this.handleChangePhone}
-                        />
+                    <Input
+                        className="form-control"
+                        type="text"
+                        placeholder={checkoutLang?.phone}
+                        value={this.state.phone}
+                        disabled={true}
+                        onChange={this.handleChangePhone}
+                    />
                 </div>
                 <div className="form-group">
-                   <Input
-                            className="form-control"
-                            type="text"
-                            placeholder={checkoutLang?.address}
-                            value={this.state.address_1}
-                            disabled={true}
-                            onChange={this.handleChangeAddress1}
-                        />
+                    <Input
+                        className="form-control"
+                        type="text"
+                        placeholder={checkoutLang?.address}
+                        value={this.state.address_1}
+                        disabled={true}
+                        onChange={this.handleChangeAddress1}
+                    />
                 </div>
                 <div className="form-group">
-                   
-                        <Input
-                            className="form-control"
-                            type="text"
-                            placeholder={checkoutLang?.apartment}
-                            value={this.state.address_2}
-                            disabled={true}
-                            onChange={this.handleChangeAddress2}
-                        />
+                    <Input
+                        className="form-control"
+                        type="text"
+                        placeholder={checkoutLang?.apartment}
+                        value={this.state.address_2}
+                        disabled={true}
+                        onChange={this.handleChangeAddress2}
+                    />
                 </div>
                 <div className="row">
                     <div className="col-sm-6">
                         <div className="form-group">
-                          <Input
-                                    className="form-control"
-                                    type="city"
-                                    placeholder={checkoutLang?.city}
-                                    value={this.state.city}
-                                    disabled={true}
-                                    onChange={this.handleChangeCity}
-                                />
+                            <Input
+                                className="form-control"
+                                type="city"
+                                placeholder={checkoutLang?.city}
+                                value={this.state.city}
+                                disabled={true}
+                                onChange={this.handleChangeCity}
+                            />
                         </div>
                     </div>
                     {/* <div className="col-sm-6">
@@ -256,7 +259,7 @@ toast.error('Please Select a address')
                         </label>
                     </div>
                 </div> */}
-                        <div className="form-group">
+                <div className="form-group">
                     <div className="ps-checkbox makeItFlex">
                         <input
                             className="form-control"

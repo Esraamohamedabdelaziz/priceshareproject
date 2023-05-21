@@ -13,7 +13,7 @@ const Checkout = () => {
     const { Translate: t } = useTranslation();
     const addressesService = new AddressesService();
     const [address, setAddress] = useState([]);
-        const [zones, setZones] = useState([]);
+    const [zones, setZones] = useState([]);
 
     const [loading, setLoading] = useState(false);
     const [selectedAddress, setSelectedAddress] = useState(null);
@@ -32,7 +32,7 @@ const Checkout = () => {
         }
     }
 
-       async function getZones() {
+    async function getZones() {
         setLoading(true);
         try {
             let responseData;
@@ -54,7 +54,7 @@ const Checkout = () => {
         }
 
         getAddresses();
-          getZones();
+        getZones();
     }, []);
 
     const checkoutLang = t('checkout_page');
@@ -75,7 +75,6 @@ const Checkout = () => {
                         <div className="ps-form__content">
                             <div className="row">
                                 <div className="col-xl-8 col-lg-8 col-md-12 col-sm-12">
-                                   
                                     <FormCheckoutInformation
                                         checkoutLang={checkoutLang}
                                         zones={zones}
@@ -83,34 +82,44 @@ const Checkout = () => {
                                             (data) => data.id == selectedAddress
                                         )}
                                     >
-                                         <h3 className="ps-form__heading" style={{fontSize:'20px'}}>
-                                        Choose Address <Button onClick={()=>{
-                                            router?.push('/addresses')
-                                        }} style={{marginLeft: '10px'}} type="link">Create one?</Button>
-                                    </h3>
-                                    <Select
-                                        size="large"
-                                        style={{
-                                            width: '100%',
-                                            marginBottom: '40px',
-                                        }}
-                                        value={selectedAddress}
-                                        status={!selectedAddress && 'error'}
-                                        onChange={(e) => {
-                                            setSelectedAddress(e);
-                                        }}
-                                        placeholder="Address"
-                                    >
-                                        {address?.map((address) => {
-                                            return (
-                                                <Select.Option
-                                                    value={address?.id}
-                                                >
-                                                    {`${address?.shipping_address_firstname} ${address?.shipping_address_firstname}, ${address?.shipping_phone_number}, ${address?.shipping_address_line1}`}
-                                                </Select.Option>
-                                            );
-                                        })}
-                                    </Select>
+                                        <h3
+                                            className="ps-form__heading"
+                                            style={{ fontSize: '20px' }}
+                                        >
+                                            Choose Address{' '}
+                                            <Button
+                                                onClick={() => {
+                                                    router?.push('/addresses');
+                                                }}
+                                                style={{ marginLeft: '10px' }}
+                                                type="link"
+                                            >
+                                                Create one?
+                                            </Button>
+                                        </h3>
+                                        <Select
+                                            size="large"
+                                            style={{
+                                                width: '100%',
+                                                marginBottom: '40px',
+                                            }}
+                                            value={selectedAddress}
+                                            status={!selectedAddress && 'error'}
+                                            onChange={(e) => {
+                                                setSelectedAddress(e);
+                                            }}
+                                            placeholder="Address"
+                                        >
+                                            {address?.map((address) => {
+                                                return (
+                                                    <Select.Option
+                                                        value={address?.id}
+                                                    >
+                                                        {`${address?.shipping_address_firstname} ${address?.shipping_address_firstname}, ${address?.shipping_phone_number}, ${address?.shipping_address_line1}`}
+                                                    </Select.Option>
+                                                );
+                                            })}
+                                        </Select>
                                     </FormCheckoutInformation>
                                 </div>
                                 <div className="col-xl-4 col-lg-4 col-md-12 col-sm-12  ps-block--checkout-order">

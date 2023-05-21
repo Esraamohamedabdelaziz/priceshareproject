@@ -208,7 +208,6 @@ const AddressesList = ({ ecomerce }) => {
                     >
                         <div className="ps-tab active" id="register">
                             <div className="ps-form__content">
-                               
                                 <div className="form-group">
                                     <Form.Item
                                         name="shipping_address_firstname"
@@ -299,9 +298,9 @@ const AddressesList = ({ ecomerce }) => {
                                         />
                                     </Form.Item>
                                 </div>
-                                 <div className="form-group">
+                                <div className="form-group">
                                     <Select
-                                    size='large'
+                                        size="large"
                                         style={{ width: '100%' }}
                                         value={selectedZone}
                                         status={!selectedZone && 'error'}
